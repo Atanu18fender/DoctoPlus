@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+<servlet>
+  <servlet-name>LoginServlet1</servlet-name>
+  <servlet-class>com.mvc.controller1.LoginServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>LoginServlet1</servlet-name>
+  <url-pattern>/SignIn</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>LoggingOut</servlet-name>
+	<servlet-class>com.mvc.controller1.LogoutServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoggingOut</servlet-name>
+	<url-pattern>/LogoutServlet1</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>SignupServlet1</servlet-name>
+  <servlet-class>com.mvc.controller1.SignUpServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>SignupServlet1</servlet-name>
+  <url-pattern>/SignUp</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>DeleteUser</servlet-name>
+	<servlet-class>com.mvc.controller1.DeleteUserServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>DeleteUser</servlet-name>
+	<url-pattern>/DeleteUser</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>SaveChanges</servlet-name>
+	<servlet-class>com.mvc.controller1.SaveChangesServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>SaveChanges</servlet-name>
+	<url-pattern>/SaveChanges</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>docRequest</servlet-name>
+	<servlet-class>com.mvc.controller1.DocRequestServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>docRequest</servlet-name>
+	<url-pattern>/docRequest</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>Acceptance</servlet-name>
+	<servlet-class>com.mvc.controller1.DocAcceptanceServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Acceptance</servlet-name>
+	<url-pattern>/Acceptance</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>Discard</servlet-name>
+	<servlet-class>com.mvc.controller1.DocDiscardServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Discard</servlet-name>
+	<url-pattern>/Discard</url-pattern>
+</servlet-mapping>
+
+</web-app>

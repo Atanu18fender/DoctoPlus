@@ -1,0 +1,324 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="description"
+	content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+<meta name="keywords"
+	content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+<meta name="author" content="ThemeSelect">
+<title>Doctor Management Dashboard!!</title>
+<link rel="apple-touch-icon"
+	href="theme-assets/images/ico/apple-icon-120.png">
+<link rel="shortcut icon" type="image/x-icon"
+	href="theme-assets/images/ico/favicon.ico">
+<link
+	href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
+	rel="stylesheet">
+<link
+	href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+	rel="stylesheet">
+<!-- BEGIN VENDOR CSS-->
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/css/vendors.css">
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/vendors/css/charts/chartist.css">
+<!-- END VENDOR CSS-->
+<!-- BEGIN CHAMELEON  CSS-->
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/css/app-lite.css">
+<!-- END CHAMELEON  CSS-->
+<!-- BEGIN Page Level CSS-->
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/css/core/menu/menu-types/vertical-menu.css">
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/css/core/colors/palette-gradient.css">
+<link rel="stylesheet" type="text/css"
+	href="theme-assets/css/pages/dashboard-ecommerce.css">
+<!-- END Page Level CSS-->
+<!-- BEGIN Custom CSS-->
+<!-- END Custom CSS-->
+<style>
+.fa-syringe {
+	color: #e60000;
+}
+
+.fa-pills {
+	color: #71da71;
+}
+
+.fa-virus-slash {
+	color: #6600ff;
+}
+
+.round {
+	border-radius: 40%;
+	box-shadow: 6px 6px 10px grey;
+}
+
+.card-cat {
+	background-color: #99ffd6 !important;
+	margin: auto;
+	transition: all 0.5s ease 0s;
+}
+
+.round:hover {
+	opacity: 0.5;
+	filter: blur(2px);
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #008CBA;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition: .3s ease;
+	transition: .3s ease;
+}
+
+.round:hover .overlay {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.text {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.card-body {
+	text-align: center;
+}
+</style>
+
+
+
+
+<script src="https://kit.fontawesome.com/80570ed867.js"
+	crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function() {
+		function disablePrev() {
+			window.history.forward()
+		}
+		window.onload = disablePrev();
+		window.onpageshow = function(evt) {
+			if (evt.persisted)
+				disableBack()
+		}
+	});
+</script>
+
+</head>
+
+<body
+	class="vertical-layout vertical-menu 2-columns fixed-navbar  menu-expanded pace-done"
+	data-open="click" data-menu="vertical-menu" data-color="bg-chartbg"
+	data-col="2-columns">
+	<div class="pace  pace-inactive">
+		<div class="pace-progress" data-progress-text="100%"
+			data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
+
+	<!-- fixed-top-->
+	<%@ include file="upnav_user.jsp"%>
+
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+	<%
+	response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+
+	if (session.getAttribute("userName") == null)
+		response.sendRedirect("login.jsp");
+	%>
+
+	<div class="container-fluid">
+		<!-- Statistics -->
+
+		<div class="row match-height">
+			<div class="col-lg-4 col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Generic Medicines at your door step</h4>
+
+					</div>
+					<img class="" src="theme-assets/images/carousel/1mg.png"
+						alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">
+							<strong>Buy Generic Medicines from TATA 1mg <i
+								class="fas fa-pills fa-2x"></i></strong>
+						</p>
+
+					</div>
+					<div
+						class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+						<span class="float-left"><a
+							href="https://www.1mg.com/?utm_source=google&utm_medium=cpc&utm_campaign=Search-Brand-1mg&utm_keyword=1mg&utm_adgroup={adgroup}&gclid=Cj0KCQjwub-HBhCyARIsAPctr7zU81JCkbDMIbdwl4HBF4OPLLjI4jdNiu9LaagMJ_rjq3xPVGvD00UaAisyEALw_wcB"
+							target="_blank"><button type="button"
+									class="btn btn-warning btn-min-width mr-1 mb-1">Buy
+									Now</button></a></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Covid Corner</h4>
+					</div>
+					<img class="" src="theme-assets/images/carousel/corona.png"
+						alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">
+							<strong>Corona Symptoms ?? Dont Panic ! <i
+								class="fas fa-virus-slash fa-2x"></i></strong>
+						</p>
+						<div
+							class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+							<span class="float-left"><a
+								href="https://www.srlworld.com/covid-19" target="_blank"><button
+										type="button" class="btn btn-warning btn-min-width mr-1 mb-1">Visit
+										Here</button></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Let's Fight Corona Virus Together</h4>
+					</div>
+					<img class="" src="theme-assets/images/carousel/vaccine.png"
+						alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">
+							<strong>Book a slot at COwin <i
+								class="fas fa-syringe fa-2x"></i>
+							</strong>
+						</p>
+					</div>
+					<div
+						class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+						<span class="float-left"><span class="float-left"><a
+								href="https://www.cowin.gov.in/" target="_blank"><button
+										type="button" class="btn btn-warning btn-min-width mr-1 mb-1">Book
+										Now</button></a></span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- category part -->
+
+		<div class="row" style="background-color: #99ffd6;">
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/periods.jpg">
+
+					<div class="card-body">
+						<strong>Period doubts or Pregnancy</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/pimple.jpg">
+					<div class="card-body">
+						<strong>Acne,Pimple and Skin issues</strong>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/sex.jpg">
+					<div class="card-body">
+						<strong>Performance issues on bed</strong>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/child.jpg">
+					<div class="card-body">
+						<strong>Child not feeling well ?</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/tooth.jpg">
+					<div class="card-body">
+					<strong>Dental Problems</strong>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<div class="card card-cat">
+					<div class="card-body"></div>
+					<img class="round" src="theme-assets/images/gallery/mental.jpg">
+					<div class="card-body">
+					<strong>Depression and Anxiety</strong>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+	<%@ include file="footer_user.jsp"%>
+
+	<!-- BEGIN VENDOR JS-->
+	<script src="theme-assets/vendors/js/vendors.min.js"
+		type="text/javascript"></script>
+	<!-- BEGIN VENDOR JS-->
+	<!-- BEGIN PAGE VENDOR JS-->
+	<script src="theme-assets/vendors/js/charts/chartist.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE VENDOR JS-->
+	<!-- BEGIN CHAMELEON  JS-->
+	<script src="theme-assets/js/core/app-menu-lite.js"
+		type="text/javascript"></script>
+	<script src="theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+	<!-- END CHAMELEON  JS-->
+	<!-- BEGIN PAGE LEVEL JS-->
+	<script src="theme-assets/js/scripts/pages/dashboard-lite.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL JS-->
+
+</body>
