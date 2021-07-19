@@ -64,10 +64,16 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             session.setAttribute("userName", UserName); //setting session attribute
             request.setAttribute("userName", UserName);
             request.setAttribute("ID", arr[0]);
-            
-         
- 
+
             request.getRequestDispatcher("dashboard_user.jsp").forward(request,response);
+        }else if(arr[1].equals("doctor")) {
+        	System.out.println("Doctor's home");
+            //Creating a session
+            session.setAttribute("doctorName", UserName); //setting session attribute
+            request.setAttribute("userName", UserName);
+            request.setAttribute("ID", arr[0]);
+  
+            request.getRequestDispatcher("dashboard_doctor.jsp").forward(request,response);
         }
         else
         {

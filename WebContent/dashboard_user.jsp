@@ -105,6 +105,25 @@
 .card-body {
 	text-align: center;
 }
+
+
+.animal{
+	margin: 100px auto;
+	background-color:blue;
+}
+.gaping{
+	margin-top: 4%;
+	margin-bottom:4%;
+	margin-left:4%;
+	margin-right:4%;
+}
+.gaping-text{
+	margin-top: 40px;
+	margin-bottom:40px;
+	text-align:center;
+	color:white;
+	
+}
 </style>
 
 
@@ -275,7 +294,7 @@
 					<div class="card-body"></div>
 					<img class="round" src="theme-assets/images/gallery/tooth.jpg">
 					<div class="card-body">
-					<strong>Dental Problems</strong>
+						<strong>Dental Problems</strong>
 					</div>
 
 				</div>
@@ -286,7 +305,7 @@
 					<div class="card-body"></div>
 					<img class="round" src="theme-assets/images/gallery/mental.jpg">
 					<div class="card-body">
-					<strong>Depression and Anxiety</strong>
+						<strong>Depression and Anxiety</strong>
 					</div>
 
 				</div>
@@ -294,6 +313,55 @@
 			</div>
 		</div>
 
+		<!-- veterinary section -->
+
+		<div class="animal">
+			<div class="row gaping">
+
+				<div class="col-lg-4 col-md-6 col-sm-12 gaping">
+
+							<div id="carouselExampleControls" class="carousel slide"
+								data-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img class="d-block w-100" src="theme-assets/images/carousel/08.jpg" alt="First slide">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="theme-assets/images/carousel/03.jpg" alt="Second slide">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="theme-assets/images/carousel/01.jpg" alt="Third slide">
+									</div>
+								</div>
+								<a class="carousel-control-prev" href="#carouselExampleControls"
+									role="button" data-slide="prev"> <span
+									class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+									class="sr-only">Previous</span>
+								</a> <a class="carousel-control-next"
+									href="#carouselExampleControls" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-12 gaping-text">
+
+					
+								<p>I love so many dogs along with Prithwish</p>
+								<br>
+								<button type="button"
+									class="btn btn-info btn-min-width mr-1 mb-1">Info</button>
+						
+							<div class="card-body"></div>
+						
+
+				</div>
+
+			</div>
+
+
+		</div>
 
 
 
