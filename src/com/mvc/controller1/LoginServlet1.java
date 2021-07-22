@@ -43,7 +43,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         UserName=URLEncoder.encode(UserName,"UTF-8");
         String userdetails=UserName+"_"+arr[0];
         Cookie unameCookie =new Cookie("userdetails",userdetails);
-        unameCookie.setMaxAge(60*60*24);
+        unameCookie.setMaxAge(60*60*60*24);
         response.addCookie(unameCookie);
         
         if(arr[1].equals("admin"))
