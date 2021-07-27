@@ -49,45 +49,77 @@
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+	integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src='assets/js/DoctorProfile.js'></script>
 
 <script language="javascript">
-	function myFunction(id) {
-		var doIt = confirm('Do you want to delete the record?');
-		if (doIt) {
+	/* 	function myFunction() { */
+	/* var doIt = confirm('Do you want to save changes?');
+	var res = ValidatePopup(); */
+
+	/* if (doIt && res) {
+		var f = document.form1;
+		f.method = "post";
+		f.action = 'SaveChanges?updateID=' + id;
+		f.submit();
+	} else {
+		console.log("Could not save !! ");
+	} */
+	/* 		if (res==true) {
+	 var f = document.form2;
+	 f.method = "post";
+	 f.action = '.';
+	 f.submit();
+	 console.log("Valid Function");
+	 } else{
+	 return res;
+	 }
+	 }
+	 */
+	function myFunction() {
+		var doIt = confirm('Do you want to save changes?');
+		var res = ValidatePopup();
+		var weekday = days();
+		if (doIt && (res && weekday)) {
 			var f = document.form1;
 			f.method = "post";
-			f.action = 'DeleteUser?id=' + id;
+			/* f.action = 'SaveChanges?updateID=' + id; */
 			f.submit();
 		} else {
-			console.log("Could Not Delete record !!");
+			console.log("Could not save !! ");
 		}
 	}
 </script>
+
 <style type="text/css">
-#fees{
-   color:#00b359;
-   font-weight:bold;
-   font-size:1.5rem;
+#fees {
+	color: #00b359;
+	font-weight: bold;
+	font-size: 1.5rem;
 }
+
 .weekDays-selector input {
-  display: none!important;
+	display: none !important;
 }
 
-.weekDays-selector input[type=checkbox] + label {
-  display: inline-block;
-  border-radius: 6px;
-  background: #dddddd;
-  height: 40px;
-  width: 30px;
-  margin-right: 3px;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
+.weekDays-selector input[type=checkbox]+label {
+	display: inline-block;
+	border-radius: 6px;
+	background: #dddddd;
+	height: 40px;
+	width: 30px;
+	margin-right: 3px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
 }
 
-.weekDays-selector input[type=checkbox]:checked + label {
-  background: #2AD705;
-  color: #ffffff;
+.weekDays-selector input[type=checkbox]:checked+label {
+	background: #2AD705;
+	color: #ffffff;
 }
 </style>
 </head>
@@ -103,8 +135,6 @@
 		</div>
 		<div class="pace-activity"></div>
 	</div>
-
-
 
 	<%
 	try {
@@ -156,7 +186,8 @@
 									<div class="card">
 										<div class="card-body">
 
-											<h4 class="card-title text-center">Dr.&nbsp;<%=rs.getString("FirstName") + " " + rs.getString("LastName")%></h4>
+											<h4 class="card-title text-center">
+												Dr.&nbsp;<%=rs.getString("FirstName") + " " + rs.getString("LastName")%></h4>
 										</div>
 										<img class="" src="theme-assets/images/carousel/23.jpg"
 											alt="Card image cap">
@@ -233,6 +264,8 @@
 									</div>
 								</div>
 
+								<!--         Doctor Specialization Details form             -->
+
 
 								<div class="col-xl-12 col-md-6">
 									<div class="card">
@@ -242,25 +275,28 @@
 													<span style="color: red;">*Must fill this form to
 														start your practice</span>
 												</h4>
-												<h6 class="card-subtitle text-muted"
-													style="text-align: center"></h6>
+												<!-- <h6 class="card-subtitle text-muted"
+													style="text-align: center"></h6> -->
+												<div id="ErrorMessageBox" style="display: none;">
+													<span id="ErrorMessageText">Please Provide UserName
+														and Password</span> <i class="ti ti-close"
+														style="float: right; margin-right: -29px; cursor: pointer;"
+														id="CloseErr"></i>
+												</div>
+												<input id="focus" type="text" style="display: none;" />
 											</div>
 											<div class="card-body">
 												<input type="hidden" value="<%=UserId%>" id="UserID"
 													name="UserID" />
+												<form class="form2 cmxform" name="form2" id="form2"
+													runat="server" method="post"
+													onsubmit="return ValidatePopup()">
+													<fieldset>
 
-												<form class="form" name="form1" id="form1" runat="server"
-													method="post">
-													<div class="form-body">
 														<div class="form-group">
-															<span style="color: red;">*</span>Speciality
-															<%-- <input
-																type="text" id="donationinput1" class="form-control"
-																placeholder="Speciality"
-																value="<%=rs.getString("Speciality") == null ? "" : rs.getString("Speciality")%>"
-																name="Speciality"> --%>
-															<select name="doctor" class="form-control" id="doctor"
-																required="required">
+															<span style="color: red;">*</span>Speciality <select
+																name="docSpeciality" class="form-control"
+																id="docSpeciality" required="required">
 																<option value="" disabled selected>Select
 																	Speciality</option>
 																<option value="General">General</option>
@@ -289,87 +325,87 @@
 																<option value="Urology">Urology</option>
 															</select>
 														</div>
+														<p>
 														<div class="form-group">
-															<span style="color: red;">*</span> Address<input
-																type="text" id="donationinput2" class="form-control"
-																placeholder="Address"
-																value="<%=rs.getString("Address") == null ? "" : rs.getString("Address")%>"
-																name="Address">
+															<span style="color: red;">*</span> <label for="Address">Address</label><input
+																type="text" id="Address" class="form-control"
+																placeholder="Address" name="Address">
+															<!-- pattern="[A-Za-z0-9'\.\-\s\,]" -->
 														</div>
+														</p>
 														<div class="form-group">
-															<span style="color: red;">*</span> Pincode<input
-																type="text" id="donationinput3" class="form-control"
-																placeholder="Pincode"
+															<span style="color: red;">*</span> Pincode[pincode must
+															be of length]<input type="text" id="Pincode"
+																class="form-control" placeholder="Pincode"
 																value="<%=rs.getString("Pincode") == null ? "" : rs.getString("Pincode")%>"
 																name="Pincode">
 														</div>
 
 														<div class="form-group">
 															<span style="color: red;">*</span> Day
-															<%-- <input type="text"
-																id="donationinput4" class="form-control"
-																placeholder="Day"
-																value="<%=rs.getString("Day") == null ? "" : rs.getString("Day")%>"
-																name="Day"> --%>
-
-
-															<div class="weekDays-selector">
-																<input type="checkbox" id="weekday-mon" class="weekday" />
-																<label for="weekday-mon">M</label> <input
-																	type="checkbox" id="weekday-tue" class="weekday" /> <label
-																	for="weekday-tue">T</label> <input type="checkbox"
-																	id="weekday-wed" class="weekday" /> <label
+															<div class="weekDays-selector" id="days">
+																<input type="checkbox" id="weekday-mon" class="weekday"
+																	value="Monday" name="weekdays" /> <label
+																	for="weekday-mon">M</label> <input type="checkbox"
+																	id="weekday-tue" class="weekday" value="Tuesday"
+																	name="weekdays" /> <label for="weekday-tue">T</label> <input
+																	type="checkbox" id="weekday-wed" class="weekday"
+																	value="Wednesday" name="weekdays" /> <label
 																	for="weekday-wed">W</label> <input type="checkbox"
-																	id="weekday-thu" class="weekday" /> <label
-																	for="weekday-thu">T</label> <input type="checkbox"
-																	id="weekday-fri" class="weekday" /> <label
+																	id="weekday-thu" class="weekday" value="Thursday"
+																	name="weekdays" /> <label for="weekday-thu">T</label> <input
+																	type="checkbox" id="weekday-fri" class="weekday"
+																	value="Friday" name="weekdays" /> <label
 																	for="weekday-fri">F</label> <input type="checkbox"
-																	id="weekday-sat" class="weekday" /> <label
-																	for="weekday-sat">Sa</label> <input type="checkbox"
-																	id="weekday-sun" class="weekday" /> <label
+																	id="weekday-sat" class="weekday" value="Saturday"
+																	name="weekdays" /> <label for="weekday-sat">Sa</label>
+																<input type="checkbox" id="weekday-sun" class="weekday"
+																	value="Sunday" name="weekdays" /> <label
 																	for="weekday-sun">Su</label>
 															</div>
-
-
-
 														</div>
 														<div class="form-group">
 															<span style="color: red;">*</span>Opening Timing<input
-																type="time" id="donationinput5" class="form-control"
-																placeholder="Timing"
+																type="time" id="StartTiming" class="form-control"
+																placeholder="Start Timing"
 																value="<%=rs.getString("Timing") == null ? "" : rs.getString("Timing")%>"
-																name="Timing">
+																name="StartTiming" required>
 														</div>
 														<div class="form-group">
 															<span style="color: red;">*</span>Closing Timing<input
-																type="time" id="donationinput5" class="form-control"
-																placeholder="Timing"
+																type="time" id="CloseTiming" class="form-control"
+																placeholder="Close Timing"
 																value="<%=rs.getString("Timing") == null ? "" : rs.getString("Timing")%>"
-																name="Timing">
+																name="CloseTiming" required>
 														</div>
 														<div class="form-group">
 															<span style="color: red;">*</span>Fees<input type="range"
-																min="100" value=100 max="2000" id="donationinput5" class="form-control"
-																placeholder="Fees" oninput="x.value = this.value"
+																min="100" value=100 max="2000" id="Fees"
+																class="form-control" placeholder="Fees"
+																oninput="x.value = this.value"
 																value="<%=rs.getString("Fees") == null ? "" : rs.getString("Fees")%>"
 																name="Fees">
-																<p id="fees">Rs. <output id="x"></output>/-</p>
+															<p id="fees">
+																Rs.
+																<output id="x">100</output>
+																/-
+															</p>
 														</div>
 														<div class="form-group">
-															<span style="color: red;">*</span> Description<textarea
-																rows="5" cols="10" id="donationinput5" class="form-control"
-																placeholder="Description"
+															<span style="color: red;">*</span> Description
+															<textarea rows="5" cols="10" id="Description"
+																class="form-control" placeholder="Description"
 																value="<%=rs.getString("Description") == null ? "" : rs.getString("Description")%>"
-																name="Description"></textarea>
+																name="Description" required></textarea>
 														</div>
 
-													</div>
-													<div class="form-actions center">
-														<!-- <button type="submit" class="btn btn-outline-primary" onclick="">Delete</button> -->
-														<input value="Update Changes" type="button"
-															class="btn btn-outline-primary" id="btndelete"
-															 />
-													</div>
+
+														<div class="form-actions center">
+															<!-- <button type="submit" class="btn btn-outline-primary" onclick="myFunction()">Delete</button> -->
+															<input value="Update Changes" type="submit"
+																class="btn btn-outline-primary" id="btnUpdate" />
+														</div>
+													</fieldset>
 												</form>
 											</div>
 										</div>
@@ -460,7 +496,9 @@
 	%>
 
 	<%@ include file="footer.jsp"%>
-
+	<script>
+		$('#form2').validate();
+	</script>
 	<!-- BEGIN VENDOR JS-->
 	<script src="theme-assets/vendors/js/vendors.min.js"
 		type="text/javascript"></script>
