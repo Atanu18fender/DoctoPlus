@@ -74,4 +74,14 @@
 	<url-pattern>/Discard</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+	<servlet-name>UpdateDoc</servlet-name>
+	<servlet-class>com.mvc.controller1.UpdateDocDetailsServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>UpdateDoc</servlet-name>
+	<url-pattern>/UpdateDoc</url-pattern>
+</servlet-mapping>
+
 </web-app>

@@ -25,6 +25,11 @@ ValidatePopup = function() {
 		ShowValidation("Please provide Pincode.", "#pincode");
 		return false;
 	}
+	
+	if($('div.weekDays-selector.checkbox-group.required :checkbox:checked').length ==0){
+		ShowValidation("Please choose days.", "#pincode");
+		return false;
+	}
 	return true;
 }
 

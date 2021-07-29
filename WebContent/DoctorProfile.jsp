@@ -79,14 +79,14 @@
 	 }
 	 }
 	 */
-	function myFunction() {
+	function myFunction(id) {
 		var doIt = confirm('Do you want to save changes?');
 		var res = ValidatePopup();
-		var weekday = days();
-		if (doIt && (res && weekday)) {
-			var f = document.form1;
+		//var weekday = days();
+		if (doIt && res) {
+			var f = document.form2;
 			f.method = "post";
-			/* f.action = 'SaveChanges?updateID=' + id; */
+			f.action = 'UpdateDoc?updateID='+id;
 			f.submit();
 		} else {
 			console.log("Could not save !! ");
@@ -212,7 +212,7 @@
 													style="text-align: center"></h6>
 											</div>
 											<div class="card-body">
-												<input type="hidden" value="<%=UserId%>" id="UserID"
+												<input type="hidden" value="<%=ID%>" id="UserID"
 													name="UserID" />
 
 												<form class="form" name="form1" id="form1" runat="server"
@@ -286,7 +286,7 @@
 												<input id="focus" type="text" style="display: none;" />
 											</div>
 											<div class="card-body">
-												<input type="hidden" value="<%=UserId%>" id="UserID"
+												<input type="hidden" value="<%=ID%>" id="UserID"
 													name="UserID" />
 												<form class="form2 cmxform" name="form2" id="form2"
 													runat="server" method="post"
@@ -343,24 +343,24 @@
 
 														<div class="form-group">
 															<span style="color: red;">*</span> Day
-															<div class="weekDays-selector" id="days">
+															<div class="weekDays-selector checkbox-group required" id="days">
 																<input type="checkbox" id="weekday-mon" class="weekday"
-																	value="Monday" name="weekdays" /> <label
+																	value="Monday" name="weekdays" required/> <label
 																	for="weekday-mon">M</label> <input type="checkbox"
 																	id="weekday-tue" class="weekday" value="Tuesday"
-																	name="weekdays" /> <label for="weekday-tue">T</label> <input
+																	name="weekdays" required/> <label for="weekday-tue">T</label> <input
 																	type="checkbox" id="weekday-wed" class="weekday"
-																	value="Wednesday" name="weekdays" /> <label
+																	value="Wednesday" name="weekdays" required /> <label
 																	for="weekday-wed">W</label> <input type="checkbox"
 																	id="weekday-thu" class="weekday" value="Thursday"
-																	name="weekdays" /> <label for="weekday-thu">T</label> <input
+																	name="weekdays" required /> <label for="weekday-thu">T</label> <input
 																	type="checkbox" id="weekday-fri" class="weekday"
-																	value="Friday" name="weekdays" /> <label
+																	value="Friday" name="weekdays" required /> <label
 																	for="weekday-fri">F</label> <input type="checkbox"
 																	id="weekday-sat" class="weekday" value="Saturday"
-																	name="weekdays" /> <label for="weekday-sat">Sa</label>
+																	name="weekdays" required /> <label for="weekday-sat">Sa</label>
 																<input type="checkbox" id="weekday-sun" class="weekday"
-																	value="Sunday" name="weekdays" /> <label
+																	value="Sunday" name="weekdays" required /> <label
 																	for="weekday-sun">Su</label>
 															</div>
 														</div>
@@ -398,12 +398,12 @@
 																value="<%=rs.getString("Description") == null ? "" : rs.getString("Description")%>"
 																name="Description" required></textarea>
 														</div>
-
-
 														<div class="form-actions center">
 															<!-- <button type="submit" class="btn btn-outline-primary" onclick="myFunction()">Delete</button> -->
-															<input value="Update Changes" type="submit"
-																class="btn btn-outline-primary" id="btnUpdate" />
+															<input value="Update Changes"
+																	type="button" class="btn btn-outline-primary"
+																	id="btnUpdateChanges"
+																	onclick="myFunction('<%=request.getParameter("ID")%>')"/>
 														</div>
 													</fieldset>
 												</form>

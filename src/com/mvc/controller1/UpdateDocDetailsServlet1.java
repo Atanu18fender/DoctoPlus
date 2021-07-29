@@ -22,20 +22,25 @@ public class UpdateDocDetailsServlet1 extends HttpServlet{
  
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Copying all the input parameters in to local variables
-         String DocID = request.getParameter("UserId").trim();
+         String DocID = request.getParameter("updateID").trim();
          String Speciality = request.getParameter("docSpeciality").trim();
          String Address = request.getParameter("Address").trim();
          String Pincode = request.getParameter("Pincode").trim();
          String Description = request.getParameter("Description").trim();
          int Fees = Integer.parseInt((request.getParameter("Fees").trim()));
-         String Timing = request.getParameter("StartTiming")+" - "+request.getParameter("CloseTiming");
-         
+         String Timing = request.getParameter("StartTiming")+"-"+request.getParameter("CloseTiming");
          String[] days = request.getParameterValues("weekdays");
-         String day="";
+         
+
+         String day="";  /// put try catch for Unavailable doctor
+         System.out.println(request);
          for(String a:days){
         	 day=day+a+" ";
          }
          day.trim();
+         if(day==""){
+        	 day="Unavailable";
+         }
          
 // 		List list = Arrays.asList(days);
 // 		request.setAttribute("names", list);
@@ -73,7 +78,7 @@ public class UpdateDocDetailsServlet1 extends HttpServlet{
 //            request.getRequestDispatcher("/Stream.jsp").forward(request, response);
              
              request.setAttribute("ID",DocID);
-             request.getRequestDispatcher("dashboard_user.jsp").forward(request,response);
+             request.getRequestDispatcher("dashboard_doctor.jsp").forward(request,response);
          }
          else   //On Failure, display a meaningful message to the User.
          {
