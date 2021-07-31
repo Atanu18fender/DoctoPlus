@@ -40,6 +40,10 @@
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
 <style>
+.banner-background{
+  clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0 50%, 0% 0%);
+}
+
 .fa-syringe {
 	color: #e60000;
 }
@@ -109,7 +113,10 @@
 
 .animal{
 	margin: 100px auto;
-	background-color:blue;
+	background-image: url("https://media.discordapp.net/attachments/830034964753547269/870946704927625246/bgpet.png?width=1025&height=372");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position: center;
 }
 .gaping{
 	margin-top: 4%;
@@ -253,7 +260,7 @@
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
 				<div class="card card-cat">
 					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/periods.jpg">
+					<img class="round" src="theme-assets/images/gallery/period.png">
 
 					<div class="card-body">
 						<strong>Period doubts or Pregnancy</strong>
@@ -315,22 +322,22 @@
 
 		<!-- veterinary section -->
 
-		<div class="animal">
+		<div class="animal banner-background">
 			<div class="row gaping">
 
 				<div class="col-lg-4 col-md-6 col-sm-12 gaping">
 
-							<div id="carouselExampleControls" class="carousel slide"
+							<div id="carouselExampleControls" class="carousel slide" style="box-shadow:8px 8px 8px  #808080;"
 								data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
-										<img class="d-block w-100" src="theme-assets/images/carousel/08.jpg" alt="First slide">
+										<img class="d-block w-100" src="theme-assets/images/carousel/dog.png" alt="First slide">
 									</div>
 									<div class="carousel-item">
-										<img class="d-block w-100" src="theme-assets/images/carousel/03.jpg" alt="Second slide">
+										<img class="d-block w-100" src="theme-assets/images/carousel/cat.png" alt="Second slide">
 									</div>
 									<div class="carousel-item">
-										<img class="d-block w-100" src="theme-assets/images/carousel/01.jpg" alt="Third slide">
+										<img class="d-block w-100" src="theme-assets/images/carousel/cat-puppy.png" alt="Third slide">
 									</div>
 								</div>
 								<a class="carousel-control-prev" href="#carouselExampleControls"
@@ -345,14 +352,14 @@
 							</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 col-sm-12 gaping-text">
+				<div class="col-lg-4 col-md-6 col-sm-12 align-self-center gaping-text">
 
 					
-								<p>I love so many dogs along with Prithwish</p>
+								<h1>Now We have our veterinary medical support for your pet....</h1>
 								<br>
-								<button type="button"
-									class="btn btn-info btn-min-width mr-1 mb-1">Info</button>
-						
+								<h3 style="color:white;background-color:#a3c2c2;opacity:0.7;">#Pet Lives Matter :)</h3>
+								<br>
+								<button type="button" class="btn btn-warning">Visit Now</button>
 							<div class="card-body"></div>
 						
 

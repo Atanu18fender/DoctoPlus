@@ -29,6 +29,7 @@
 <link
 	href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
 	rel="stylesheet">
+<script src="https://kit.fontawesome.com/80570ed867.js" crossorigin="anonymous"></script>
 <!-- BEGIN VENDOR CSS-->
 <link rel="stylesheet" type="text/css"
 	href="theme-assets/css/vendors.css">
@@ -86,7 +87,7 @@
 		if (doIt && res) {
 			var f = document.form2;
 			f.method = "post";
-			f.action = 'UpdateDoc?updateID='+id;
+			f.action = 'UpdateDoc?updateID=' + id;
 			f.submit();
 		} else {
 			console.log("Could not save !! ");
@@ -181,9 +182,9 @@
 						<!-- Header footer section start -->
 						<section id="header-footer">
 							<div class="row match-height">
-								<div class="col-lg-3 col-md-12"></div>
-								<div class="col-lg-6 col-md-12">
-									<div class="card">
+								<div class="col-lg-2 col-md-12"></div>
+								<div class="col-lg-8 col-md-12">
+									<%-- <div class="card">
 										<div class="card-body">
 
 											<h4 class="card-title text-center">
@@ -191,11 +192,55 @@
 										</div>
 										<img class="" src="theme-assets/images/carousel/23.jpg"
 											alt="Card image cap">
+									</div> --%>
+
+									<div class="card mb-3">
+										<div class="row no-gutters">
+											<div class="col-lg-5 col-md-5">
+												<img class="img-fluid rounded float-left"
+													src="theme-assets/images/carousel/photo1.jpg"
+													alt="Upload Image"
+													style="height: 21.80rem; width: 21.5rem;">
+											</div>
+											<div class="col-lg-7 col-md-7">
+												<div class="card-body">
+													<h3>
+														Dr.&nbsp;<%=rs.getString("FirstName") + " " + rs.getString("LastName")%><%="  "%><span style="color:green;"><i class="fas fa-check-circle"></i></span>
+													</h3>
+													<h3 class="card-title">
+														(<%=rs.getString("speciality")%>&nbsp;| Reg. no:<%=rs.getString("RegNo")%>)
+													</h3>
+
+													<p class="card-text"><%=rs.getString("Description")%></p>
+													<p style="font-weight: bold; font-size: 110%;">
+														<span style="color: black;">Days available :</span>&nbsp;<%=rs.getString("Day")%></p>
+													<p class="card-text">
+													<p class="card-text">
+														<span style="color: black;">Timing :</span><strong><%=rs.getString("Timing")%></strong>
+													</p>
+													<p class="card-text">
+														<span style="color: black;"><strong>Chamber
+																Location :</strong></span><%=rs.getString("Address")%></p>
+													</p>
+												</div>
+											</div>
+										</div>
 									</div>
+
 								</div>
-								<div class="col-lg-3 col-md-12"></div>
+								<div class="col-lg-2 col-md-12"></div>
 							</div>
 						</section>
+
+
+
+
+
+
+
+
+
+
 						<!-- Header footer section End -->
 
 						<!-- Content types section start -->
@@ -343,18 +388,19 @@
 
 														<div class="form-group">
 															<span style="color: red;">*</span> Day
-															<div class="weekDays-selector checkbox-group required" id="days">
+															<div class="weekDays-selector checkbox-group required"
+																id="days">
 																<input type="checkbox" id="weekday-mon" class="weekday"
-																	value="Monday" name="weekdays" required/> <label
+																	value="Monday" name="weekdays" required /> <label
 																	for="weekday-mon">M</label> <input type="checkbox"
 																	id="weekday-tue" class="weekday" value="Tuesday"
-																	name="weekdays" required/> <label for="weekday-tue">T</label> <input
-																	type="checkbox" id="weekday-wed" class="weekday"
+																	name="weekdays" required /> <label for="weekday-tue">T</label>
+																<input type="checkbox" id="weekday-wed" class="weekday"
 																	value="Wednesday" name="weekdays" required /> <label
 																	for="weekday-wed">W</label> <input type="checkbox"
 																	id="weekday-thu" class="weekday" value="Thursday"
-																	name="weekdays" required /> <label for="weekday-thu">T</label> <input
-																	type="checkbox" id="weekday-fri" class="weekday"
+																	name="weekdays" required /> <label for="weekday-thu">T</label>
+																<input type="checkbox" id="weekday-fri" class="weekday"
 																	value="Friday" name="weekdays" required /> <label
 																	for="weekday-fri">F</label> <input type="checkbox"
 																	id="weekday-sat" class="weekday" value="Saturday"
@@ -400,10 +446,9 @@
 														</div>
 														<div class="form-actions center">
 															<!-- <button type="submit" class="btn btn-outline-primary" onclick="myFunction()">Delete</button> -->
-															<input value="Update Changes"
-																	type="button" class="btn btn-outline-primary"
-																	id="btnUpdateChanges"
-																	onclick="myFunction('<%=request.getParameter("ID")%>')"/>
+															<input value="Update Changes" type="button"
+																class="btn btn-outline-primary" id="btnUpdateChanges"
+																onclick="myFunction('<%=request.getParameter("ID")%>')" />
 														</div>
 													</fieldset>
 												</form>

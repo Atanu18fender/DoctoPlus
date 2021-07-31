@@ -72,13 +72,13 @@ if (theCookies != null) {
 						class="dropdown-toggle nav-link dropdown-user-link" href="#"
 						data-toggle="dropdown" aria-expanded="false"> <span
 							class="avatar avatar-online"><img
-								src="theme-assets/images/portrait/small/avatar-s-19.png"
+								src="theme-assets/images/portrait/small/photo1.jpg"
 								alt="avatar"><i></i></span></a>
 						<div class="dropdown-menu dropdown-menu-right">
 							<div class="arrow_box_right">
 								<a class="dropdown-item" href="#"><span
 									class="avatar avatar-online"><img
-										src="theme-assets/images/portrait/small/avatar-s-19.png"
+										src="theme-assets/images/portrait/small/photo1.jpg"
 										alt="avatar"> <span class="user-name text-bold-700 ml-1"><%=session.getAttribute("doctorName")==null?name:session.getAttribute("doctorName")%></span>
 								</span></a>
 								<div class="dropdown-divider"></div>
