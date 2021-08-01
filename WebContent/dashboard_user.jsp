@@ -40,10 +40,12 @@
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
 <style>
-.banner-background{
-  clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0 50%, 0% 0%);
+.banner-background1{
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
 }
-
+.banner-background2{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+}
 .fa-syringe {
 	color: #e60000;
 }
@@ -59,17 +61,19 @@
 .round {
 	border-radius: 40%;
 	box-shadow: 6px 6px 10px grey;
+	
 }
 
 .card-cat {
 	background-color: #99ffd6 !important;
 	margin: auto;
-	transition: all 0.5s ease 0s;
+	/* transition: all 0.5s ease 0s; */
+	
+  }
+	
 }
-
 .round:hover {
-	opacity: 0.5;
-	filter: blur(2px);
+	 transform: translate(10px);
 }
 
 .overlay {
@@ -88,11 +92,11 @@
 	transition: .3s ease;
 }
 
-.round:hover .overlay {
+/* .round:hover .overlay {
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
-}
+} */
 
 .text {
 	color: white;
@@ -112,7 +116,6 @@
 
 
 .animal{
-	margin: 100px auto;
 	background-image: url("https://media.discordapp.net/attachments/830034964753547269/870946704927625246/bgpet.png?width=1025&height=372");
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -124,12 +127,22 @@
 	margin-left:4%;
 	margin-right:4%;
 }
+.gaping1{
+   margin-top:0;
+}
 .gaping-text{
 	margin-top: 40px;
 	margin-bottom:40px;
 	text-align:center;
 	color:white;
 	
+}
+.anima{
+   transition: transform 250ms;
+}
+.anima:hover{
+  -ms-transform: translateY(-10px); /* IE 9 */
+  transform: translateY(-10px);
 }
 </style>
 
@@ -181,6 +194,34 @@
 
 	<div class="container-fluid">
 		<!-- Statistics -->
+		
+		
+		
+			<!-- Modal -->
+						<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Modal
+											title</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">...</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save
+											changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 
 		<div class="row match-height">
 			<div class="col-lg-4 col-md-12">
@@ -256,75 +297,79 @@
 		</div>
 		<!-- category part -->
 
-		<div class="row" style="background-color: #99ffd6;">
+		<div class="row banner-background2" style="background-color: #99ffd6;">
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+			<a href="DocSpeciality.jsp?speciality=general">
 				<div class="card card-cat">
 					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/period.png">
+					<img class="round anima" src="theme-assets/images/gallery/period.png">
 
 					<div class="card-body">
 						<strong>Period doubts or Pregnancy</strong>
 					</div>
 				</div>
+			</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/pimple.jpg">
-					<div class="card-body">
-						<strong>Acne,Pimple and Skin issues</strong>
+			<a href="DocSpeciality.jsp?speciality=dermatologist">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima" src="theme-assets/images/gallery/pimple.jpg">
+						<div class="card-body">
+							<strong>Acne,Pimple and Skin issues</strong>
+						</div>
 					</div>
-				</div>
-
+			</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/sex.jpg">
-					<div class="card-body">
-						<strong>Performance issues on bed</strong>
+				<a href="DocSpeciality.jsp?speciality=sexologist">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima" src="theme-assets/images/gallery/sex.jpg">
+						<div class="card-body">
+							<strong>Performance issues on bed</strong>
+						</div>
 					</div>
-				</div>
-
+				</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+			<a href="DocSpeciality.jsp?speciality=pediatrician">
 				<div class="card card-cat">
 					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/child.jpg">
+					<img class="round anima" src="theme-assets/images/gallery/child.jpg">
 					<div class="card-body">
 						<strong>Child not feeling well ?</strong>
 					</div>
 				</div>
+			</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+			<a href="DocSpeciality.jsp?speciality=dentist">
 				<div class="card card-cat">
 					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/tooth.jpg">
+					<img class="round anima" src="theme-assets/images/gallery/tooth.jpg">
 					<div class="card-body">
 						<strong>Dental Problems</strong>
 					</div>
-
 				</div>
-
+            </a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+			<a href="DocSpeciality.jsp?speciality=psychiatrist">
 				<div class="card card-cat">
 					<div class="card-body"></div>
-					<img class="round" src="theme-assets/images/gallery/mental.jpg">
+					<img class="round anima" src="theme-assets/images/gallery/mental.jpg">
 					<div class="card-body">
 						<strong>Depression and Anxiety</strong>
 					</div>
-
 				</div>
-
+            </a>
 			</div>
 		</div>
 
 		<!-- veterinary section -->
-
-		<div class="animal banner-background">
-			<div class="row gaping">
-
+		<div class="animal banner-background1 gaping1">
+			<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-12 gaping">
 
 							<div id="carouselExampleControls" class="carousel slide" style="box-shadow:8px 8px 8px  #808080;"

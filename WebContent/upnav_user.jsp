@@ -1,7 +1,7 @@
 <%@ page import="java.net.URLDecoder"%>
 <%
 Cookie[] theCookies = request.getCookies();
-String details = "",name="",ID="";
+String details = "", name = "", ID = "";
 if (theCookies != null) {
 
 	for (Cookie tempCookie : theCookies) {
@@ -10,9 +10,9 @@ if (theCookies != null) {
 
 	// decode cookie data ... handle case of languages with spaces in them
 	details = URLDecoder.decode(tempCookie.getValue(), "UTF-8");
-	String arr[]=details.split("_");
-	name=arr[0];
-	ID=arr[1];
+	String arr[] = details.split("_");
+	name = arr[0];
+	ID = arr[1];
 	break;
 		}
 
@@ -55,10 +55,16 @@ if (theCookies != null) {
 					<li class="nav-item d-none d-md-block">
 						<!-- <a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a> -->
 					</li>
-					<li class="nav-item dropdown navbar-search"><a
+					<li class="nav-item dropdown navbar-search"><!-- <a
 						class="nav-link dropdown-toggle hide" data-toggle="dropdown"
-						href="#"><i class="ficon ft-search"></i></a>
-						<ul class="dropdown-menu">
+						href="#"><i class="ficon ft-search"></i></a>  -->
+						
+						
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary" data-toggle="modal"
+							data-target=".bd-example-modal-lg"><i class="ficon ft-search"></i>Search</button> 
+	
+					 <!-- <ul class="dropdown-menu">
 							<li class="arrow_box">
 								<form>
 									<div class="input-group search-box">
@@ -72,7 +78,8 @@ if (theCookies != null) {
 									</div>
 								</form>
 							</li>
-						</ul></li>
+						</ul> -->
+						</li>
 				</ul>
 
 				<ul class="nav navbar-nav float-right">
@@ -98,10 +105,11 @@ if (theCookies != null) {
 								<a class="dropdown-item" href="#"><span
 									class="avatar avatar-online"><img
 										src="theme-assets/images/portrait/small/avatar-s-19.png"
-										alt="avatar"> <span class="user-name text-bold-700 ml-1"><%=request.getAttribute("userName")==null?name:request.getAttribute("userName")%></span>
+										alt="avatar"> <span class="user-name text-bold-700 ml-1"><%=request.getAttribute("userName") == null ? name : request.getAttribute("userName")%></span>
 								</span></a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="userProfile.jsp?ID=<%=request.getAttribute("ID")==null?ID:request.getAttribute("ID")%>"><i
+								<a class="dropdown-item"
+									href="userProfile.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i
 									class="ft-user"></i> My Profile</a><a class="dropdown-item"
 									href="#"><i class="ft-mail"></i> My Inbox</a><a
 									class="dropdown-item" href="#"><i class="ft-check-square"></i>
