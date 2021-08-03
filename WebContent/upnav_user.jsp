@@ -25,8 +25,6 @@ if (theCookies != null) {
 <nav
 	class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light navbar-shadow">
 
-
-
 	<%
 	if (session.getAttribute("userName") == null) {
 		request.setAttribute("errMessage", "You have to login");
@@ -61,24 +59,9 @@ if (theCookies != null) {
 						
 						
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target=".bd-example-modal-lg"><i class="ficon ft-search"></i>Search</button> 
-	
-					 <!-- <ul class="dropdown-menu">
-							<li class="arrow_box">
-								<form>
-									<div class="input-group search-box">
-										<div class="position-relative has-icon-right full-width">
-											<input class="form-control" id="search" type="text"
-												placeholder="Search here...">
-											<div class="form-control-position navbar-search-close">
-												<i class="ft-x"> </i>
-											</div>
-										</div>
-									</div>
-								</form>
-							</li>
-						</ul> -->
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+							data-target=".bd-example-modal-lg"><i class="ficon ft-search"></i>Search Doctor</button> 	
+
 						</li>
 				</ul>
 

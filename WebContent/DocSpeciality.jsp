@@ -67,7 +67,11 @@
 		}
 	}
 </script>
-
+<style>
+.profile{
+clip-path: circle(50% at 50% 50%);
+}
+</style>
 </head>
 
 <body
@@ -109,28 +113,28 @@
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
 	%>
-	
-	<div class="container-fluid">
-		<div class="row match-height">
-			<div class="col-lg-4 col-md-12">
+		<div class="row match-height container-fluid flex">
+			<div class="col-lg-2 col-md-12"></div>
+			<div class="col-lg-8 col-md-12">
 				<div class="card mb-3">
-					<div class="row no-gutters">
-						<div class="col-lg-5 col-md-5">
-							<img class="img-fluid rounded float-left"
-								src="theme-assets/images/carousel/photo1.jpg" alt="Upload Image"
-								style="height: 21.80rem; width: 21.5rem;">
+					<div class="row justify-content-center no-gutters">
+						<div class="col-lg-3 col-md-12 ml-auto" style="margin-top:10px;">
+							<img class="rounded-circle float-left"
+								src="theme-assets/images/gallery/profile.jpg" alt="Upload Image"
+								style="height: 12.80rem; width: 12.5rem;border-radius:50%;">
+								<!-- <button class="btn btn-success " style="width: 13rem;">Book Now</button> -->
 						</div>
-						<div class="col-lg-7 col-md-7">
+						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="card-body">
 								<h3>
 									Dr.&nbsp;<%=rs.getString("FirstName") + " " + rs.getString("LastName")%><%="  "%><span
 										style="color: green;"><i class="fas fa-check-circle"></i></span>
 								</h3>
 								<h3 class="card-title">
-									(<%=rs.getString("speciality")%>&nbsp;| Reg. no:<%=rs.getString("RegNo")%>)
+									(<%=rs.getString("speciality")%>)
 								</h3>
 
-								<p class="card-text"><%=rs.getString("Description")%></p>
+								<%-- <p class="card-text"><%=rs.getString("Description")%></p> --%>
 								<p style="font-weight: bold; font-size: 110%;">
 									<span style="color: black;">Days available :</span>&nbsp;<%=rs.getString("Day")%></p>
 								<p class="card-text">
@@ -140,15 +144,23 @@
 								<p class="card-text">
 									<span style="color: black;"><strong>Chamber
 											Location :</strong></span><%=rs.getString("Address")%></p>
-								</p>
 							</div>
+						</div>
+						<div class="col-lg-3 col-md-3">
+						    <div class="card-body">
+						        <button class="btn btn-warning" style="margin-top:10px;">Consult</button>
+						        
+						    	<%-- <button class="btn btn-success " style="margin-top:10px;"><%=rs.getString("Fees")%>/-</button> --%>
+						    	
+						    	<!-- <button class="btn btn-success " style="margin-top:10px;">Book Now</button> -->
+						     </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- category part -->
-	</div>
+	
 	
 	<%
 	}

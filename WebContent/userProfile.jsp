@@ -18,7 +18,7 @@
 <meta name="keywords"
 	content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
 <meta name="author" content="ThemeSelect">
-<title>Doctor Management Dashboard!!</title>
+<title>User Profile!!</title>
 <link rel="apple-touch-icon"
 	href="theme-assets/images/ico/apple-icon-120.png">
 <link rel="shortcut icon" type="image/x-icon"

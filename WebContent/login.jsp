@@ -9,7 +9,7 @@
 <meta Http-Equiv="Pragma" Content="no-cache">
 <meta Http-Equiv="Expires" Content="0">
 
-<title>Insert title here</title>
+<title>Docto+ Login</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
