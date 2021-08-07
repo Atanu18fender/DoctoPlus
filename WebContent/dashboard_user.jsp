@@ -40,12 +40,14 @@
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
 <style>
-.banner-background1{
-  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
+.banner-background1 {
+	clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
 }
-.banner-background2{
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+
+.banner-background2 {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
 }
+
 .fa-syringe {
 	color: #e60000;
 }
@@ -61,19 +63,17 @@
 .round {
 	border-radius: 40%;
 	box-shadow: 6px 6px 10px grey;
-	
 }
 
 .card-cat {
 	background-color: #99ffd6 !important;
 	margin: auto;
 	/* transition: all 0.5s ease 0s; */
-	
-  }
-	
+}
+
 }
 .round:hover {
-	 transform: translate(10px);
+	transform: translate(10px);
 }
 
 .overlay {
@@ -97,7 +97,6 @@
 	-ms-transform: scale(1);
 	transform: scale(1);
 } */
-
 .text {
 	color: white;
 	font-size: 20px;
@@ -114,35 +113,39 @@
 	text-align: center;
 }
 
-
-.animal{
-	background-image: url("https://media.discordapp.net/attachments/830034964753547269/870946704927625246/bgpet.png?width=1025&height=372");
-	background-repeat:no-repeat;
-	background-size:cover;
+.animal {
+	background-image:
+		url("https://media.discordapp.net/attachments/830034964753547269/870946704927625246/bgpet.png?width=1025&height=372");
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
 }
-.gaping{
+
+.gaping {
 	margin-top: 4%;
-	margin-bottom:4%;
-	margin-left:4%;
-	margin-right:4%;
+	margin-bottom: 4%;
+	margin-left: 4%;
+	margin-right: 4%;
 }
-.gaping1{
-   margin-top:0;
+
+.gaping1 {
+	margin-top: 0;
 }
-.gaping-text{
+
+.gaping-text {
 	margin-top: 40px;
-	margin-bottom:40px;
-	text-align:center;
-	color:white;
-	
+	margin-bottom: 40px;
+	text-align: center;
+	color: white;
 }
-.anima{
-   transition: transform 250ms;
+
+.anima {
+	transition: transform 250ms;
 }
-.anima:hover{
-  -ms-transform: translateY(-10px); /* IE 9 */
-  transform: translateY(-10px);
+
+.anima:hover {
+	-ms-transform: translateY(-10px); /* IE 9 */
+	transform: translateY(-10px);
 }
 </style>
 
@@ -182,7 +185,7 @@
 	<%@ include file="upnav_user.jsp"%>
 
 	<!-- ////////////////////////////////////////////////////////////////////////////-->
-<%-- 	<%
+	<%-- 	<%
 	response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Cache-Control", "no-store");
 	response.setHeader("Pragma", "no-cache");
@@ -194,32 +197,9 @@
 
 	<div class="container-fluid">
 		<!-- Statistics -->
-		
-	   <!-- Modal -->
-		<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1"
-			role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal
-							title</h5>
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">...</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save
-							changes</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End of Modal -->				
+        <!-- Search Modal -->
+		<%@ include file="SearchModal.jsp"%>
+		<!-- End of Modal -->
 
 		<div class="row match-height">
 			<div class="col-lg-4 col-md-12">
@@ -297,27 +277,29 @@
 
 		<div class="row banner-background2" style="background-color: #99ffd6;">
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-			<a href="DocSpeciality.jsp?speciality=general">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round anima" src="theme-assets/images/gallery/period.png">
-
-					<div class="card-body">
-						<strong>Period doubts or Pregnancy</strong>
-					</div>
-				</div>
-			</a>
-			</div>
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-			<a href="DocSpeciality.jsp?speciality=dermatologist">
+				<a href="DocSpeciality.jsp?speciality=general">
 					<div class="card card-cat">
 						<div class="card-body"></div>
-						<img class="round anima" src="theme-assets/images/gallery/pimple.jpg">
+						<img class="round anima"
+							src="theme-assets/images/gallery/period.png">
+
+						<div class="card-body">
+							<strong>Period doubts or Pregnancy</strong>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
+				<a href="DocSpeciality.jsp?speciality=dermatologist">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima"
+							src="theme-assets/images/gallery/pimple.jpg">
 						<div class="card-body">
 							<strong>Acne,Pimple and Skin issues</strong>
 						</div>
 					</div>
-			</a>
+				</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
 				<a href="DocSpeciality.jsp?speciality=sexologist">
@@ -331,37 +313,40 @@
 				</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-			<a href="DocSpeciality.jsp?speciality=pediatrician">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round anima" src="theme-assets/images/gallery/child.jpg">
-					<div class="card-body">
-						<strong>Child not feeling well ?</strong>
+				<a href="DocSpeciality.jsp?speciality=pediatrician">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima"
+							src="theme-assets/images/gallery/child.jpg">
+						<div class="card-body">
+							<strong>Child not feeling well ?</strong>
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-			<a href="DocSpeciality.jsp?speciality=dentist">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round anima" src="theme-assets/images/gallery/tooth.jpg">
-					<div class="card-body">
-						<strong>Dental Problems</strong>
+				<a href="DocSpeciality.jsp?speciality=dentist">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima"
+							src="theme-assets/images/gallery/tooth.jpg">
+						<div class="card-body">
+							<strong>Dental Problems</strong>
+						</div>
 					</div>
-				</div>
-            </a>
+				</a>
 			</div>
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xsm-4">
-			<a href="DocSpeciality.jsp?speciality=psychiatrist">
-				<div class="card card-cat">
-					<div class="card-body"></div>
-					<img class="round anima" src="theme-assets/images/gallery/mental.jpg">
-					<div class="card-body">
-						<strong>Depression and Anxiety</strong>
+				<a href="DocSpeciality.jsp?speciality=psychiatrist">
+					<div class="card card-cat">
+						<div class="card-body"></div>
+						<img class="round anima"
+							src="theme-assets/images/gallery/mental.jpg">
+						<div class="card-body">
+							<strong>Depression and Anxiety</strong>
+						</div>
 					</div>
-				</div>
-            </a>
+				</a>
 			</div>
 		</div>
 
@@ -370,41 +355,48 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-12 gaping">
 
-							<div id="carouselExampleControls" class="carousel slide" style="box-shadow:8px 8px 8px  #808080;"
-								data-ride="carousel">
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<img class="d-block w-100" src="theme-assets/images/carousel/dog.png" alt="First slide">
-									</div>
-									<div class="carousel-item">
-										<img class="d-block w-100" src="theme-assets/images/carousel/cat.png" alt="Second slide">
-									</div>
-									<div class="carousel-item">
-										<img class="d-block w-100" src="theme-assets/images/carousel/cat-puppy.png" alt="Third slide">
-									</div>
-								</div>
-								<a class="carousel-control-prev" href="#carouselExampleControls"
-									role="button" data-slide="prev"> <span
-									class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-									class="sr-only">Previous</span>
-								</a> <a class="carousel-control-next"
-									href="#carouselExampleControls" role="button" data-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="sr-only">Next</span>
-								</a>
+					<div id="carouselExampleControls" class="carousel slide"
+						style="box-shadow: 8px 8px 8px #808080;" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100"
+									src="theme-assets/images/carousel/dog.png" alt="First slide">
 							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100"
+									src="theme-assets/images/carousel/cat.png" alt="Second slide">
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100"
+									src="theme-assets/images/carousel/cat-puppy.png"
+									alt="Third slide">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls"
+							role="button" data-slide="prev"> <span
+							class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+							class="sr-only">Previous</span>
+						</a> <a class="carousel-control-next" href="#carouselExampleControls"
+							role="button" data-slide="next"> <span
+							class="carousel-control-next-icon" aria-hidden="true"></span> <span
+							class="sr-only">Next</span>
+						</a>
+					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 col-sm-12 align-self-center gaping-text">
+				<div
+					class="col-lg-4 col-md-6 col-sm-12 align-self-center gaping-text">
 
-					
-								<h1>Now We have our veterinary medical support for your pet....</h1>
-								<br>
-								<h3 style="color:white;background-color:#a3c2c2;opacity:0.7;">#Pet Lives Matter :)</h3>
-								<br>
-								<button type="button" class="btn btn-warning">Visit Now</button>
-							<div class="card-body"></div>
-						
+
+					<h1>Now We have our veterinary medical support for your
+						pet....</h1>
+					<br>
+					<h3 style="color: white; background-color: #a3c2c2; opacity: 0.7;">#Pet
+						Lives Matter :)</h3>
+					<br>
+					<button type="button" class="btn btn-warning">Visit Now</button>
+					<div class="card-body"></div>
+
 
 				</div>
 

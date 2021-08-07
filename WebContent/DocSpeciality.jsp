@@ -148,7 +148,8 @@ clip-path: circle(50% at 50% 50%);
 						</div>
 						<div class="col-lg-3 col-md-3">
 						    <div class="card-body">
-						        <button class="btn btn-warning" style="margin-top:10px;">Consult</button>
+						        <a href="Booking.jsp?DocID=<%=rs.getString("ID")%>&PatientID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><button class="btn btn-success" style="margin-top:10px;">Book Now</button></a>
+						        <button class="btn btn-warning" style="margin-top:10px;">Profile</button>
 						        
 						    	<%-- <button class="btn btn-success " style="margin-top:10px;"><%=rs.getString("Fees")%>/-</button> --%>
 						    	
@@ -188,5 +189,4 @@ clip-path: circle(50% at 50% 50%);
 	<script src="theme-assets/js/scripts/pages/dashboard-lite.js"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL JS-->
-
 </body>
