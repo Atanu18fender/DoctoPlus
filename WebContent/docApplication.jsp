@@ -73,7 +73,22 @@
 
 <script src='assets/js/updateProfile.js'></script>
 
-<script language="javascript">
+<script language="javascript">	
+	function DisableButton() {
+	    var chkYes = document.getElementById("disagree");
+	    var submitButton = document.getElementById("submit");
+	    if(chkYes.checked==true){
+	    	submitButton.disabled=true;
+	    }
+	}
+	function EnableButton() {
+	    var chkYes = document.getElementById("agree");
+	    var submitButton = document.getElementById("submit");
+	    if(chkYes.checked==true){
+	    	submitButton.disabled=false;
+	    }
+	}
+	
 	function myFunction() {
 		var doIt = confirm('Are you sure ?');
 		/* var res = ValidatePopup(); */
@@ -251,18 +266,21 @@
 									that the information in this form is truly stated and correct
 									and I am competent to furnish as well as verify it with
 									adequate details whenever requested for by Docto +</label>
-								<div class="p-t-15">
+								<div class="p-t-15" class="radio">
 									<label class="radio-container m-r-55">I agree <input
-										type="radio" checked="checked" name="exist"> <span
+										type="radio" id="agree" name="terms"
+										onclick="EnableButton()"> <span
 										class="checkmark"></span>
 									</label> <label class="radio-container">I disagree <input
-										type="radio" name="exist"> <span class="checkmark"></span>
+										type="radio" checked="checked" id="disagree" name="terms"
+										onclick="DisableButton()"> <span
+										class="checkmark"></span>
 									</label>
 								</div>
 							</div>
 							<div>
-								<button class="btn btn--radius-2 btn--red" type="submit"
-									onclick="myFunction()">Register</button>
+								<button class="btn btn--radius-2 btn--red" id="submit" disabled
+									type="submit" onclick="myFunction()">Register</button>
 							</div>
 						</form>
 					</div>

@@ -801,10 +801,10 @@ li[data-type="control_image"] img {
         background-position: center top;
       }
       .supernova {
-        background-image: url("https://www.jotform.com/uploads/batuhan/form_files/final_20864245705555.5b18e0a95657b9.83368454.jpg");
+        background-image:url("theme-assets/images/backgrounds/appointment.jpg");
       }
       #stage {
-        background-image: url("https://www.jotform.com/uploads/batuhan/form_files/final_20864245705555.5b18e0a95657b9.83368454.jpg");
+        background-image: url("theme-assets/images/backgrounds/appointment.jpg");
       }
     
     .form-all {
