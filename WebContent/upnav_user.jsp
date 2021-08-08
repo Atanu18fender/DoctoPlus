@@ -93,8 +93,10 @@ if (theCookies != null) {
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item"
 									href="userProfile.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i
-									class="ft-user"></i> My Profile</a><a class="dropdown-item"
-									href="#"><i class="ft-mail"></i> My Inbox</a><a
+									class="ft-user"></i> My Profile</a>
+									<a class="dropdown-item"
+									href="Appointments_user.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i class="ft-mail"></i>Appoinments</a>
+									<a
 									class="dropdown-item" href="#"><i class="ft-check-square"></i>
 									Task</a><a class="dropdown-item" href="#"><i
 									class="ft-message-square"></i> Chats</a>

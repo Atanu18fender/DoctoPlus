@@ -1473,7 +1473,8 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
 </script>
 </head>
 <body>
-<form class="jotform-form" action="https://submit.jotform.com/submit/212162083862452/" method="post" name="form_212162083862452" id="212162083862452" accept-charset="utf-8" autocomplete="on">
+
+<form class="jotform-form" action="DocBooking" method="post" name="form_212162083862452" id="212162083862452">
   <input type="hidden" name="formID" value="212162083862452" />
   <input type="hidden" id="JWTContainer" value="" />
   <input type="hidden" id="cardinalOrderNumber" value="" />
@@ -1485,6 +1486,10 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
             <h3 id="header_19" class="form-header" data-component="header">
               Patients Personal Details
             </h3>
+            
+            <input name="DocID" value="<%=request.getParameter("DocID")%>" type="hidden"/>
+            <input name="PatientID" value="<%=request.getParameter("PatientID")%>" type="hidden"/>
+     
             <div id="subHeader_19" class="form-subHeader">
               Fill the form below and we will get back soon to you for more updates.
             </div>
@@ -1518,7 +1523,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
               <option value="">  </option>
               <option value="Male"> Male </option>
               <option value="Female"> Female </option>
-              <option value="Not willing to Disclose"> Not willing to Disclose </option>
+              <option value="Others">Others</option>
             </select>
             <label class="form-sub-label" for="input_22" id="sublabel_input_22" style="min-height:13px" aria-hidden="false"> Choose gender </label>
           </span>
@@ -1550,13 +1555,6 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
         </label>
         <div id="cid_43" class="form-input-wide jf-required">
           <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="areaCode">
-              <input type="tel" id="input_43_area" name="q43_phoneNumber[area]" class="form-textbox validate[required]" value="" placeholder="+91" data-component="areaCode" aria-labelledby="label_43 sublabel_43_area" required="" />
-              <span class="phone-separate" aria-hidden="true">
-                 -
-              </span>
-              <label class="form-sub-label" for="input_43_area" id="sublabel_43_area" style="min-height:13px" aria-hidden="false"> Area Code </label>
-            </span>
             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
               <input type="tel" id="input_43_phone" name="q43_phoneNumber[phone]" class="form-textbox validate[required]" value="" data-component="phone" aria-labelledby="label_43 sublabel_43_phone" required="" />
               <label class="form-sub-label" for="input_43_phone" id="sublabel_43_phone" style="min-height:13px" aria-hidden="false"> Phone Number </label>
@@ -1591,14 +1589,14 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
               <span class="form-sub-label-container" style="vertical-align:top">
                 <input type="tel" class="form-textbox validate[required, limitDate]" id="month_33" name="q33_appointment[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_33 sublabel_33_month" />
                 <span class="date-separate" aria-hidden="true">
-                   /
+                  ï¿½/
                 </span>
                 <label class="form-sub-label" for="month_33" id="sublabel_33_month" style="min-height:13px" aria-hidden="false"> Month </label>
               </span>
               <span class="form-sub-label-container" style="vertical-align:top">
                 <input type="tel" class="form-textbox validate[required, limitDate]" id="day_33" name="q33_appointment[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" required="" autoComplete="off" aria-labelledby="label_33 sublabel_33_day" />
                 <span class="date-separate" aria-hidden="true">
-                   /
+                  ï¿½/
                 </span>
                 <label class="form-sub-label" for="day_33" id="sublabel_33_day" style="min-height:13px" aria-hidden="false"> Day </label>
               </span>
@@ -1636,7 +1634,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
                 <option value="12"> 12 </option>
               </select>
               <span class="date-separate">
-                 :
+                ï¿½:
               </span>
               <label class="form-sub-label" for="input_42_hourSelect" id="sublabel_42_hour" style="min-height:13px" aria-hidden="false"> Hour </label>
             </span>
@@ -1665,34 +1663,17 @@ JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"
       <li class="form-line" data-type="control_button" id="id_2">
         <div id="cid_2" class="form-input-wide">
           <div style="text-align:center" data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-            <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+          
+          
+            <!-- <button  type="submit"  >
               Submit Form
-            </button>
+            </button> -->
+            
+            <input id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button"  value="Submt Form" />
           </div>
         </div>
       </li>
-      <li style="display:none">
-        Should be Empty:
-        <input type="text" name="website" value="" />
-      </li>
     </ul>
-  </div>
-  <script>
-  JotForm.showJotFormPowered = "new_footer";
-  </script>
-  <script>
-  JotForm.poweredByText = "Powered by JotForm";
-  </script>
-  <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="212162083862452" />
-  <script type="text/javascript">
-  var all_spc = document.querySelectorAll("form[id='212162083862452'] .si" + "mple" + "_spc");
-for (var i = 0; i < all_spc.length; i++)
-{
-  all_spc[i].value = "212162083862452-212162083862452";
-}
-  </script>
-  <div class="formFooter-heightMask">
   </div>
 </form></body>
 </html>
-<script type="text/javascript">JotForm.ownerView=true;</script>

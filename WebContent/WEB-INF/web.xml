@@ -2,6 +2,15 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
 
 <servlet>
+	<servlet-name>DocBooking</servlet-name>
+	<servlet-class>com.mvc.controller1.BookingServlet1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>DocBooking</servlet-name>
+	<url-pattern>/DocBooking</url-pattern>
+</servlet-mapping>
+
+<servlet>
   <servlet-name>LoginServlet1</servlet-name>
   <servlet-class>com.mvc.controller1.LoginServlet1</servlet-class>
 </servlet>
