@@ -10,7 +10,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <li class="active"><a href="dashboard_doctor.jsp"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
           </li>
-          <li class="nav-item"><a href="#"><i class="la la-file-text"></i><span class="menu-title" data-i18n="">Check Appointment</span></a>
+          <li class="nav-item"><a href="Appointments_doc.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i class="la la-file-text"></i><span class="menu-title" data-i18n="">Check Appointment</span></a>
           </li>
           <!-- <li class="nav-item"><a href="#"><i class="la la-user"></i><span class="menu-title" data-i18n=""></span></a>
           </li> -->

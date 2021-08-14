@@ -8,14 +8,14 @@
       </div>
       <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li class="active"><a href="dashboard.jsp"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+          <li class="active"><a href="Appointments_user.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i class="la la-calendar-plus-o"></i><span class="menu-title" data-i18n="">Appointments</span></a>
           </li>
-          <li class="nav-item"><a href="DoctorDetails.jsp"><i class="la la-stethoscope"></i><span class="menu-title" data-i18n="">Find Doctor</span></a>
+          <li class="nav-item"><a href="Subscription_user.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i class="la la-inr"></i><span class="menu-title" data-i18n="">My Subscription</span></a>
           </li>
-          <li class="nav-item"><a href="UserDetails.jsp"><i class="la la-user"></i><span class="menu-title" data-i18n="">Pharma</span></a>
-          </li>
-          <li class="nav-item"><a href="UserDetails.jsp"><i class="la la-user"></i><span class="menu-title" data-i18n="">Covid Corner</span></a>
-          </li>
+          <li class="nav-item"><a href="History_user.jsp?ID=<%=request.getAttribute("ID") == null ? ID : request.getAttribute("ID")%>"><i class="la la-header"></i><span class="menu-title" data-i18n="">History</span></a>
+ <!--          </li>
+          <li class="nav-item"><a href="UserDetails.jsp"><i class="la la-user"></i><span class="menu-title" data-i18n=""></span></a>
+          </li> -->
         </ul>
       </div>
       <div class="navigation-background" style="background-image: url(&quot;theme-assets/images/backgrounds/02.jpg&quot;);"></div>

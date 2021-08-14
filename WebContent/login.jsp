@@ -60,7 +60,7 @@ $().ready(function() {
 							<p style="color:white;">New User?<%="  " %><a
 							class="forgot text-muted" href="signup.jsp">Sign Up</a></p>
 							 <input
-							type="submit" name="btnLogin" id="btnLogin" value="Login" />
+							type="submit" name="btnLogin" id="btnLogin" value="Login"/>
 						<div class="col-md-12"></div>
 					</form>
 				</div>
