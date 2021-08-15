@@ -44,23 +44,35 @@
 	href="theme-assets/css/core/colors/palette-gradient.css">
 <link rel="stylesheet" type="text/css"
 	href="theme-assets/css/pages/dashboard-ecommerce.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
-<script language="javascript">
-	$document.ready(function(){
+<!-- 	$(document).ready(function(){
 		$('.btn-primary').click(function(){
 			var id=$(this).attr("id");
 			$.ajax({
 				url:"getData.jsp",
 				type:"post",
-				data:"uid="+id,
+				data:"BookID="+id,
 				success:function(data){
-					$("")
+					$("#show-data").html(data);
 				}
-			})
-		})
-	})
+			});
+		});
+	}); -->
+<script type="text/javascript">
+function OpenModal(ID){
+	console.log(ID);
+	$.ajax({
+		url:"getData.jsp",
+		type:"post",
+		data:"BookID="+ID,
+		success:function(data){
+			$("#show-data").html(data);
+		}
+	});
+}
 </script>
 </head>
 
@@ -105,7 +117,7 @@
 											<ul class="list-inline mb-0">
 												<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
 												<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-												<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+												<!-- <li><a data-action="expand"><i class="ft-maximize"></i></a></li> -->
 											</ul>
 										</div>
 									</div>
@@ -122,7 +134,7 @@
 														<th scope="col">Appoinment Date</th>
 														<th scope="col">Phone Number</th>
 														<th scope="col">Payment Status</th>
-														<th scope="col">View</th>
+														<th scope="col"></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -131,8 +143,7 @@
 													String mysqlUrl1 = "jdbc:sqlserver://127.0.0.1;databaseName=DoctorManagementDB";
 													try {
 														Connection con = DriverManager.getConnection(mysqlUrl1, "sa", "Sysadm123");
-														System.out.println("Connection established......");
-
+														System.out.println("Connection established1......");
 														//Retrieving data
 														String UserID = request.getParameter("ID");
 														String SPsql = "EXEC [SP_DM_AppointmentsOfDoc] ?"; // for stored proc taking 1 parameters
@@ -149,9 +160,13 @@
 														<td><%=rs1.getString("AppointmentDate")%></td>
 														<td><%=rs1.getString("PhoneNo")%></td>
 														<td>Paid</td>
-														<td><a type="button" class="btn btn-primary"
-															data-toggle="modal" id="<%=rs1.getString("BookingID")%>" data-target="#exampleModal">View</a></td>
+														<td>
+														<a type="button" >
+														<button class="btn btn-success"
+															data-toggle="modal" onclick="OpenModal('<%=rs1.getString("BookingID")%>')" id="<%=rs1.getString("BookingID")%>"
+															data-target="#exampleModal">View</button></td>
 													</tr>
+													</a>
 													<%
 													}
 													} catch (SQLException e) {
@@ -171,7 +186,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -179,45 +194,21 @@
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #00b3b3;">
 					<h3 class="modal-title" style="color: white;"
-						id="exampleModalLabel">Search</h3>
+						id="exampleModalLabel">Patient Details</h3>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true" style="color: white;">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body" id="show-data">
-					
-				</div>
+				<div class="modal-body" id="show-data"></div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
+					<button type="button" class="btn btn-danger"
 						data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header" style="background-color: #00b3b3;">
-					<h3 class="modal-title" style="color: white;"
-						id="exampleModalLabel">Search</h3>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true" style="color: white;">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">...</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
 
 
 	<!-- ////////////////////////////////////////////////////////////////////////////-->
