@@ -231,16 +231,6 @@
 								<div class="col-lg-2 col-md-12"></div>
 							</div>
 						</section>
-
-
-
-
-
-
-
-
-
-
 						<!-- Header footer section End -->
 
 						<!-- Content types section start -->
@@ -296,13 +286,6 @@
 														</div>
 
 													</div>
-													<%-- <div class="form-actions center">
-														<!-- <button type="submit" class="btn btn-outline-primary" onclick="">Delete</button> -->
-														<input value="Delete"
-																	type="button" class="btn btn-outline-primary"
-																	id="btndelete"
-																	onclick="myFunction('<%=request.getParameter("Userid")%>')"/>
-													</div> --%>
 												</form>
 											</div>
 										</div>
