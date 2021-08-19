@@ -1,7 +1,6 @@
 <!-- Modal -->
 <script>
 function search(){
-	
 	/* if(num==1){
 		var doIt = confirm('Do you want to Approve?');
 		if (doIt) {
@@ -24,8 +23,44 @@ function search(){
 			console.log("Could not update !! ");
 		}
 	} */
+	console.log("LOL");
+	var option=document.getElementById("exampleFormControlSelect1").value;
+	var val=document.getElementById("search-item").value;
+	console.log(val+' '+option);
+	switch(option){
+		case "Doctor":
+			console.log("DoctorAjax");
+			$.ajax({
+				url:"SearchDoc.jsp",
+				type:"post",
+				data:"DocName="+val,
+				success:function(data){
+					$("#show-search-data").html(data);
+				}
+			});
+			break;
+		case "Pin":
+			$.ajax({
+				url:"SearchPin.jsp",
+				type:"post",
+				data:"Pincode="+val,
+				success:function(data){
+					$("#show-search-data").html(data);
+				}
+			});
+			break;
+		case "Speciality":
+			$.ajax({
+				url:"SearchSpeciality.jsp",
+				type:"post",
+				data:"Speciality="+val,
+				success:function(data){
+					$("#show-search-data").html(data);
+				}
+			});
+			break;
+	}
 }
-
 </script>
 <div class="modal fade bd-example-modal-lg" id="exampleModal"
 	tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -43,35 +78,26 @@ function search(){
 				<div class="form-group">
 					<label for="exampleFormControlSelect1">Search By</label> <select
 						class="form-control" id="exampleFormControlSelect1" required>
-						<option>Doctor Name</option>
-						<option>Pin code</option>
-						<option>Speciality</option>
+						<option value="Doctor">Doctor Name</option>
+						<option value="Pin">Pin code</option>
+						<option value="Speciality">Speciality</option>
 					</select>
 				</div>
-
+            
 				<div class="input-group mb-3">
 					<input type="text" class="form-control"
 						placeholder="Doctor name , Pincode , Speciality"
-						aria-label="Recipient's username" aria-describedby="button-addon2">
+						id="search-item" aria-label="Recipient's username" aria-describedby="button-addon2"  onchange="search()">
 					<div class="input-group-append">
-						<input class="btn btn-primary" type="button" value="Search" id="button-addon2" onclick="search()">
-							
+						<input class="btn btn-primary" type="button" value="Search" id="button-addon2"  onclick="search()">	
 					</div>
 				</div>
 
-				<div class="card w-100">
-				<h5>Card title</h5>
-				<div class="card-body">
-					
-					<p class="card-text">With supporting text below as a natural
-						lead-in to additional content.</p>
-				</div>
+				<div class="card w-100" id="show-search-data">
+				
 				</div>
 				
 
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

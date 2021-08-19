@@ -8,23 +8,7 @@ import java.security.SecureRandom;
 
 public class CryptoUtil 
 {
-	/*
-	 * public static void main(String[] args) throws NoSuchAlgorithmException,
-	 * NoSuchProviderException { String passwordToHash = "Jhonny"; byte[] salt =
-	 * getSalt(); byte[] salt1 = getSalt();
-	 * 
-	 * String securePassword = getSecurePassword(passwordToHash, salt); String
-	 * securePassword1 = getSecurePassword(passwordToHash, salt1);
-	 * System.out.println(securePassword); //Prints 83ee5baeea20b6c21635e4ea67847f66
-	 * System.out.println(securePassword1);
-	 * 
-	 * String regeneratedPassowrdToVerify = getSecurePassword(passwordToHash, salt);
-	 * String regeneratedPassowrdToVerify1 = getSecurePassword(passwordToHash,
-	 * salt1); System.out.println(regeneratedPassowrdToVerify); //Prints
-	 * 83ee5baeea20b6c21635e4ea67847f66
-	 * System.out.println(regeneratedPassowrdToVerify1); }
-	 */
-     
+
     public String getSecurePassword(String passwordToHash, byte[] salt)
     {
         String generatedPassword = null;
