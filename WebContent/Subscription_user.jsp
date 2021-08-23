@@ -46,6 +46,8 @@
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
+
+
 <script language="javascript">
 function myFunction(id){
     var doIt=confirm('Do you want to delete the record?');
@@ -79,8 +81,6 @@ function myFunction(id){
 	<!-- ////////////////////////////////////////////////////////////////////////////-->
 	<%@ include file="sidenav_user.jsp"%>
 
-
-			
 	<!-- ////////////////////////////////////////////////////////////////////////////-->
 
 

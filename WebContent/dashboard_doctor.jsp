@@ -40,6 +40,29 @@
 <!-- BEGIN Custom CSS-->
 <!-- END Custom CSS-->
 <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+	$.ajax({
+		url : "GetPatientList.jsp",
+		type : "post",
+		data : "DocID="+ID,
+		success : function(data) {
+			console.log(data);
+			$("#recent-buyers").html(data);
+		}
+	 });
+});
+
+/* $(document).ready(function(){
+	$.ajax({
+		url : "GetPatientList.jsp",
+		type : "post",
+		data : "DocID="+ID,
+		success : function(data) {
+			console.log(data);
+			$("#recent-buyers").html(data);
+		}
+	 });
+}); */
 	function loadAppointment(ID) {
 		console.log(ID);
 		$.ajax({
@@ -52,6 +75,7 @@
 			}
 		});
 	}
+	window.onload = loadAppointment(loadAppointment('<%=request.getAttribute("ID")%>'));
 </script>
 
 </head>
@@ -60,6 +84,7 @@
 	class="vertical-layout vertical-menu 2-columns fixed-navbar  menu-expanded pace-done"
 	data-open="click" data-menu="vertical-menu" data-color="bg-chartbg"
 	data-col="2-columns">
+	
 	<div class="pace  pace-inactive">
 		<div class="pace-progress" data-progress-text="100%"
 			data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
